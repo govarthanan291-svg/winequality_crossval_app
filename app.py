@@ -27,7 +27,7 @@ except:
 st.markdown("""
 <style>
 .stApp {
-    background-color: #FFD700;
+    background-color: #b0b528;
 }
 
 .main {
