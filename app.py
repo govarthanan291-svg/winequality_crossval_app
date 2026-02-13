@@ -18,7 +18,7 @@ try:
     with open("wine_quality_model.pkl", "rb") as file:
         model = pickle.load(file)
 except:
-    st.error("wine_quality_model.pkl file missing!")
+    st.error("❌ wine_quality_model.pkl file not found in folder!")
     st.stop()
 
 # -----------------------
@@ -26,7 +26,7 @@ except:
 # -----------------------
 st.markdown("""
 <style>
-body {
+.stApp {
     background-color: #FFD700;
 }
 
@@ -87,7 +87,7 @@ with col2:
     ph = st.number_input("pH", 0.0, 5.0)
 
 # -----------------------
-# PREDICT
+# PREDICT BUTTON
 # -----------------------
 if st.button("Predict Wine Quality 🍾"):
     input_data = np.array([[fixed_acidity, volatile_acidity, citric_acid,
@@ -96,7 +96,7 @@ if st.button("Predict Wine Quality 🍾"):
 
     prediction = model.predict(input_data)
 
-    st.success(f"Predicted Wine Quality: {round(prediction[0],2)} / 10")
+    st.success(f"🎉 Predicted Wine Quality: {round(prediction[0],2)} / 10")
 
 # -----------------------
 # FOOTER
